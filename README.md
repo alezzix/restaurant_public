@@ -13,7 +13,6 @@ Of course the system assumes that any bigger group may get bored of seeing small
 
 Please fill RestManager class with appropriate data structures and implement its constructor and three public methods. You are encouraged modify other classes too (to help us test them) and add new methods at your will.
 
-### NOTE: please do not upload the solution to any (public) space/repository
 
 public class Table
 {
@@ -77,5 +76,3 @@ seats with this update.
 - Java
 
 ---
-
-🤘👽 Alessandra Mansano - 12/2020 🤘👽
