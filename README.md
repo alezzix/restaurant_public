@@ -1,9 +1,11 @@
 RESTAURANT EXERCISE (please use JAVA 7 syntax)
+----------------------------------------------------------------------------------------
+
 Your restaurant has a set of tables of different sizes: each table can accommodate 2, 3, 4, 5 or 6 persons. Clients arrive alone or in groups, up to 6 persons. Clients within a given group must be seated together at one table, hence you can direct a group only to a table, which can accommodate them all. If there is no table with the required number of empty chairs, the group has to wait in the queue.
 
 Once seated, the group cannot change the table, i.e. you cannot move a group from one table to another to make room for new clients.
 
-Client groups must be served in the order of arrival with one exception: if there is enough room at a table for a smaller group arriving later, you can seat them before the larger group(s) in the queue. For example, if there is a six-person group waiting for a six-seat table and there is a two-person group queuing or arriving you can send them directly to a table with two empty chairs.
+Client groups must be served in the order of arrival with one exception: if there is enough room at a table for a smaller group arriving later, you can seat them before the larger group(s) in the queue. For example, if there is a six-person group waiting for a six-seat table and there is a two-person group queuing  or arriving you can send them directly to a table with two empty chairs.
 
 Groups may share tables, however if at the same time you have an empty table with the required number of chairs and enough empty chairs at a larger one, you must always seat your client(s) at an empty table and not any partly seated one, even if the empty table is bigger than the size of the group.
 
@@ -11,34 +13,69 @@ Of course the system assumes that any bigger group may get bored of seeing small
 
 Please fill RestManager class with appropriate data structures and implement its constructor and three public methods. You are encouraged modify other classes too (to help us test them) and add new methods at your will.
 
-NOTE: please do not upload the solution to any (public) space/repository
-public class Table { public final int size; // number of chairs }
+### NOTE: please do not upload the solution to any (public) space/repository
 
-public class ClientsGroup { public final int size; // number of clients }
+public class Table
+{
+   public final int size; // number of chairs
+}
 
-public class RestManager { public RestManager (List
+public class ClientsGroup
+{
+   public final int size; // number of clients
+}
 
-tables) { // TODO }
-// new client(s) show up public void onArrive (ClientsGroup group) { // TODO }
+public class RestManager
+{
+   public RestManager (List<Table> tables)
+   {
+      // TODO
+   }
 
-// client(s) leave, either served or simply abandoning the queue public void onLeave (ClientsGroup group) { // TODO }
+   // new client(s) show up
+   public void onArrive (ClientsGroup group)
+   {
+      // TODO
+   }
 
-// return table where a given client group is seated, // or null if it is still queuing or has already left public Table lookup (ClientsGroup group) { // TODO } }
+   // client(s) leave, either served or simply abandoning the queue
+   public void onLeave (ClientsGroup group)
+   {
+      // TODO
+   }
 
-restaurant-clients-table API
+   // return table where a given client group is seated, 
+   // or null if it is still queuing or has already left
+   public Table lookup (ClientsGroup group)
+   {
+      // TODO
+   }
+}
+
+
+# restaurant-clients-table API
+
 Application with the functionality of put group of clients in free tables or free seats.
 
-Suggestion to Test:
+# Suggestion to Test:
 -Use Postman collection in resources/ postman "RestaurantCollection.postman_collection.json";
+- Import this collection in Postman program;
+- Start application with ExecuteApplication.java class
+- Call on Postman the POST method (localhost:8081/tables - create all tables)
+- Call on Postman the POST method (localhost:8081/onArrive). It will fill tables and
+create groups in queue;
+- You can also call the GET methods /tables and /groups to see the list of tables, free seats, groups 
+with a table and groups in queue without a table, with tableId = 0; 
+- Call on Postman the PUT method (localhost:8081/onLeave) to remove a group and check if there are new 
+seats with this update.
 
-Import this collection in Postman program;
-Start application with ExecuteApplication.java class
-Call on Postman the POST method (localhost:8081/tables - create all tables)
-Call on Postman the POST method (localhost:8081/onArrive). It will fill tables and create groups in queue;
-You can also call the GET methods /tables and /groups to see the list of tables, free seats, groups with a table and groups in queue without a table, with tableId = 0;
-Call on Postman the PUT method (localhost:8081/onLeave) to remove a group and check if there are new seats with this update.
-Technologies:
-Spring Boot
-Spring Data
-H2 database
-Java
+
+## Technologies:
+- Spring Boot
+- Spring Data
+- H2 database
+- Java
+
+---
+
+🤘👽 Alessandra Mansano - 12/2020 🤘👽
