@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "09ea9146-555c-4976-a711-27c275bfbd07",
+		"name": "RestaurantCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8081/actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/actuator/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/groups",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/groups",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/tables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/tables",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/tables - create all tables",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"size\": 2,\r\n        \"totalFreeSeats\": 2\r\n    },\r\n    {\r\n        \"size\": 3,\r\n        \"totalFreeSeats\": 3\r\n    },\r\n    {\r\n        \"size\": 4,\r\n        \"totalFreeSeats\": 4\r\n    },\r\n    {\r\n        \"size\": 5,\r\n        \"totalFreeSeats\": 5\r\n    },\r\n    {\r\n        \"size\": 6,\r\n        \"totalFreeSeats\": 6\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "localhost:8081/tables",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/onArrive",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"size\": 2\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/onArrive",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"onArrive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/onLeave",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"size\": 4,\r\n    \"id\": 3,\r\n    \"tableId\": 3\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/onLeave",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"onLeave"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
